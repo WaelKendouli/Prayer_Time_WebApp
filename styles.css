@@ -1,12 +1,12 @@
  :root {
-    --color-background: #085137;
+    
 	--color-primary: #1f7a5a;
 	--color-primary-dark: #15543e;
 	--color-primary-light: #dff3ea;
 	--color-secondary: #d9a441;
-	--color-background: #f7faf8;
+	--color-background: #085137;
 	--color-surface: #ffffff;
-	--color-text: #1f2933;
+	--color-text: #ffffff;
 	--color-text-muted: #667085;
 	--color-border: #d9e2dc;
 	--color-success: #2e8b57;
@@ -43,3 +43,16 @@
     padding: 0;
 }
 
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-color: var(--color-background);
+color: var(--color-text);
+}
+
+.Dashboard {
+    width : 70%
+    h
+}
