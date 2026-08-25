@@ -100,3 +100,59 @@ input::placeholder {
     justify-content: center;
     align-items: center;
 }
+
+/* Core structure wrapper */
+.combobox-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 320px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Descriptive Label styling */
+.combobox-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Container for positioning the custom arrow indicator */
+.combobox-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom interactive Input Field styling */
+.combobox-input {
+  width: 100%;
+  padding: 10px 36px 10px 12px;
+  font-size: 15px;
+  color: #222222;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Visual states on interactive hover and keyboard focus */
+.combobox-input:hover {
+  border-color: #a0a0a0;
+}
+
+.combobox-input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+/* Decorative placement icon indicating menu toggles */
+.combobox-arrow {
+  position: absolute;
+  right: 12px;
+  font-size: 10px;
+  color: #777777;
+  pointer-events: none;
+}
