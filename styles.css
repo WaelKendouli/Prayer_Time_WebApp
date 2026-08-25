@@ -38,6 +38,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -74,7 +75,9 @@ color: var(--color-text);
     display: flex;
     flex-direction: row;
     gap : 1.2rem;
-justify-content: space-between;
+justify-content: center;
+align-items: center;
+
 }
 
 
@@ -86,7 +89,7 @@ border: 1px solid black;
 color : var(--color-text);
 background-color: var(--color-primary);
 border-radius: var(--radius-sm);
-padding: 0.5rem 0.3rem;
+padding: 0.8rem 0.3rem;
 }
 input::placeholder {
     color : var(--color-text);
