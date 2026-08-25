@@ -115,7 +115,7 @@ input::placeholder {
 .combobox-label {
   font-size: 14px;
   font-weight: 600;
-  color: #333333;
+  color: var(--color-primary);
 }
 
 /* Container for positioning the custom arrow indicator */
@@ -130,12 +130,13 @@ input::placeholder {
   width: 100%;
   padding: 10px 36px 10px 12px;
   font-size: 15px;
-  color: #222222;
+  color: var(--color-primary);
   border: 1px solid #cccccc;
   border-radius: 6px;
   background-color: #ffffff;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: var(--radius-sm);
 }
 
 /* Visual states on interactive hover and keyboard focus */
