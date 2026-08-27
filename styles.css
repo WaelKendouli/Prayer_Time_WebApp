@@ -90,7 +90,7 @@ border: 1px solid black;
 color : var(--color-text);
 background-color: var(--color-primary);
 border-radius: var(--radius-sm);
-padding: 0.8rem 0.3rem;
+padding: 1.8rem 0.3rem;
 }
 input::placeholder {
     color : var(--color-text);
