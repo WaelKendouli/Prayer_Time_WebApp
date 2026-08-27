@@ -22,7 +22,7 @@
 <input class="search_bar" type="text" id="txtCity" name="city" placeholder="Enter your city">
               
     </div>
-    <button>Search</button>
+    <button id="btn_search">Search</button>
     </div>
         
     <div class="combobox-container">
@@ -30,7 +30,7 @@
   <div class="combobox-wrapper">
     <input 
       type="text" 
-      id="country-select" 
+      id="country_select" 
       list="countries" 
       placeholder="Type or select a country..." 
       class="combobox-input"
@@ -81,9 +81,9 @@
     </datalist>
   </div>
 </div>
-<div class="invalid">this is invalid message</div>
+<div class="invalid" id ="lbInvalid">this is invalid message</div>
     <div class="table-container">
-  <table class="adhan-table">
+  <table id="tbTimes" class="adhan-table">
     <thead>
       <tr>
         <th>Prayer</th>
