@@ -10,3 +10,5 @@ const UI = {
 
     tbTimes: document.getElementById('tbTimes')
 };
+
+const Main_URL = "https://api.aladhan.com/v1";
