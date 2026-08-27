@@ -12,3 +12,13 @@ const UI = {
 };
 
 const Main_URL = "https://api.aladhan.com/v1";
+
+function SetError(message)
+{
+if (!message) {
+    UI.lbInvalid.style.display = "none";
+    return;
+}
+UI.lbInvalid.style.display = "flex";
+UI.lbInvalid.textContent = message;
+}
