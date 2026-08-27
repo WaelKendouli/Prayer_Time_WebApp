@@ -160,3 +160,73 @@ input::placeholder {
   color: #777777;
   pointer-events: none;
 }
+
+/* Container to allow horizontal scrolling on small mobile screens */
+.table-container {
+  position : relative;
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.adhan-table {
+  position : relative;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.adhan-table thead tr {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.adhan-table th {
+ text-align: center;
+ padding-block: 1.3rem;
+}
+
+.adhan-table td {
+  padding: 15px 20px;
+   text-align: center;
+  font-weight: bold;
+}
+
+.adhan-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.2s ease;
+}
+
+.adhan-table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.adhan-table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.adhan-table tbody tr.current-prayer {
+  background-color: #e8f5e9;
+  color: var(--color-primary);
+  font-weight: bold;
+  border-left: 5px solid #198754;
+}
+
+/* Make text slightly smaller and muted on mobile if needed */
+@media (max-width: 480px) {
+  .adhan-table th,
+  .adhan-table td {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+}
+
