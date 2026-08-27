@@ -11,6 +11,7 @@
 	--color-border: #d9e2dc;
 	--color-success: #2e8b57;
 	--color-error: #c0392b;
+  --color-secondary : hsla(151, 92%, 40%, 0.31);
     --color-shadow: hsla(0, 0%, 100%, 0.397);
 
 	--font-family-base: "Inter", "Segoe UI", sans-serif;
@@ -207,11 +208,12 @@ input::placeholder {
 }
 
 .adhan-table tbody tr:nth-of-type(even) {
-  background-color: #f8f9fa;
+  background-color: var(--color-secondary);
 }
 
 .adhan-table tbody tr:hover {
-  background-color: #f1f3f5;
+ transform: scale(0.9);
+transition: transform 0.2s ease
 }
 
 .adhan-table tbody tr.current-prayer {
