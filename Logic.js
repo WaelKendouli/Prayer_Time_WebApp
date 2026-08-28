@@ -23,7 +23,7 @@ UI.lbInvalid.style.display = "flex";
 UI.lbInvalid.textContent = message;
 }
 
-function BulidURL(country , city , time) {
+function BuildURL(country , city , time) {
 
     if(!country || !city || !time)
     {
@@ -41,8 +41,37 @@ parms.set("country",country);
 return parms.toString();
 }
 
+function Render(data)
+{
+
+    
+}
 
 async function SearchPrayerTime(country , city , time)
 {
+    SetError("");
+    const BaseURL = BuildURL(country, city , time);
 
+    try {
+        const res = await fetch(BaseURL);
+                if (!res.ok)
+                    {
+                        SetError(`HTTP ${res.status} (${res.statusText})`);
+                    throw new Error(`HTTP ${res.status} (${res.statusText})`);
+                    } 
+        const data = await res.json();
+        if (data.status === 200) {
+            
+        } 
+        else
+        {
+
+        }
+
+    }
+    catch(e)
+    {
+        SetError(e.message);
+        throw new Error(e.message);
+    }
 }
