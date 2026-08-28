@@ -44,6 +44,31 @@ return parms.toString();
 function Render(data)
 {
 
+    const Timing = data.timings;
+    UI.tbTimes.innerHTML = "";
+    UI.tbTimes.innerHTML = `
+    <tr>
+        <td>Fajr</td>
+        <td>05:12 AM</td>
+      </tr>
+      <tr>
+        <td>Dhuhr</td>
+        <td>12:30 PM</td>
+      </tr>
+      <tr>
+        <td>Asr</td>
+        <td>03:45 PM</td>
+      </tr>
+      <tr>
+        <td>Maghrib</td>
+        <td>06:15 PM</td>
+      </tr>
+      <tr>
+        <td>Isha</td>
+        <td>07:45 PM</td>
+      </tr>
+    `;
+
     
 }
 
