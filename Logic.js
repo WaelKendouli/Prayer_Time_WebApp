@@ -6,7 +6,6 @@ const UI = {
     lbInvalid: document.getElementById('lbInvalid'),
     tbTimes: document.getElementById('tbTimes'),
     LoadingSpiner : document.getElementById('LoadingSpin'),
-    btnSearch : document.getElementById('btn_search')
 };
 
 const Main_URL = "https://api.aladhan.com/v1";
@@ -120,6 +119,6 @@ async function SearchPrayerTime(country , city , time)
     }
 }
 
-btnSearch.addEventListener('click' , () => {
-    SearchPrayerTime(countrySelect.value , txtCity.value , GetCurrentDate());
+UI.btnSearch.addEventListener('click' , () => {
+    SearchPrayerTime(UI.countrySelect.value , UI.txtCity.value , GetCurrentDate());
 })
