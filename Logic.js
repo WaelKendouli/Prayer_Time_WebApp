@@ -40,7 +40,7 @@ function BuildURL(country , city , time) {
     url.searchParams.set("city", city);
     url.searchParams.set("country", country);
 
-return parms.toString();
+    return url.toString();
 }
 
 function Render(data)
