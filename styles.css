@@ -274,7 +274,7 @@ button:hover {
 }
 
 .Loading {
-  display: flex;
+  display: none;
   width : 30px;
   height: 30px;
   border-radius: 50%;
