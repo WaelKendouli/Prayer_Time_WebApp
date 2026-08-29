@@ -1,14 +1,11 @@
 
 const UI = {
     txtCity: document.getElementById('txtCity'),
-
     btnSearch: document.getElementById('btn_search'),
-
     countrySelect: document.getElementById('country_select'),
-
     lbInvalid: document.getElementById('lbInvalid'),
-
-    tbTimes: document.getElementById('tbTimes')
+    tbTimes: document.getElementById('tbTimes'),
+    LoadingSpiner : document.getElementById('LoadingSpin')
 };
 
 const Main_URL = "https://api.aladhan.com/v1";
@@ -21,6 +18,11 @@ if (!message) {
 }
 UI.lbInvalid.style.display = "flex";
 UI.lbInvalid.textContent = message;
+}
+
+function setLoading(isLoading)
+{
+UI.LoadingSpiner.style.display = isLoading===true ? "flex"  : "none" ;
 }
 
 function BuildURL(country , city , time) {
@@ -49,23 +51,23 @@ function Render(data)
     UI.tbTimes.innerHTML = `
     <tr>
         <td>Fajr</td>
-        <td>05:12 AM</td>
+        <td>${Timing.Fajr}</td>
       </tr>
       <tr>
         <td>Dhuhr</td>
-        <td>12:30 PM</td>
+        <td>${Timing.Dhuhr}</td>
       </tr>
       <tr>
         <td>Asr</td>
-        <td>03:45 PM</td>
+        <td>${Timing.Asr}</td>
       </tr>
       <tr>
         <td>Maghrib</td>
-        <td>06:15 PM</td>
+        <td>${Timing.Maghrib}</td>
       </tr>
       <tr>
         <td>Isha</td>
-        <td>07:45 PM</td>
+        <td>${Timing.Isha}</td>
       </tr>
     `;
 
@@ -75,28 +77,33 @@ function Render(data)
 async function SearchPrayerTime(country , city , time)
 {
     SetError("");
+    setLoading(true);
     const BaseURL = BuildURL(country, city , time);
 
     try {
         const res = await fetch(BaseURL);
                 if (!res.ok)
                     {
+                        setLoading(false);
                         SetError(`HTTP ${res.status} (${res.statusText})`);
                     throw new Error(`HTTP ${res.status} (${res.statusText})`);
                     } 
         const data = await res.json();
         if (data.status === 200) {
-            
+            Render(data);
         } 
         else
         {
-
+             SetError(`something wrong happend while deserializing the data`);
         }
+         setLoading(false);
 
     }
     catch(e)
     {
         SetError(e.message);
+         setLoading(false);
+         UI.tbTimes.innerHTML="";
         throw new Error(e.message);
     }
 }
