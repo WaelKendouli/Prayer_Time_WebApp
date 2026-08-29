@@ -137,7 +137,7 @@ input::placeholder {
 .combobox-input {
   width: 100%;
   padding: 10px 36px 10px 12px;
-  font-size: 15px;
+  font-size: 25px;
   color: var(--color-primary);
   border: 1px solid #cccccc;
   border-radius: 6px;
@@ -286,4 +286,10 @@ button:hover {
 @keyframes spin {
    0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.SearchResult {
+  display: flex;
+  margin: 10px;
+  font-size: 1.6rem;
+  color: var(--color-success);
 }

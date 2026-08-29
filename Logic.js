@@ -6,6 +6,7 @@ const UI = {
     lbInvalid: document.getElementById('lbInvalid'),
     tbTimes: document.getElementById('tbTimes'),
     LoadingSpiner : document.getElementById('LoadingSpin'),
+    SearchResult : document.getElementById('SearchResult')
 };
 
 const Main_URL = "https://api.aladhan.com/v1";
@@ -18,6 +19,14 @@ if (!message) {
 }
 UI.lbInvalid.style.display = "flex";
 UI.lbInvalid.textContent = message;
+}
+
+
+
+function setResult(message , Isdisplayed)
+{
+    UI.SearchResult.style.display = Isdisplayed===true ? "flex"  : "none" ;
+    UI.SearchResult.textContent = message;
 }
 
 function setLoading(isLoading)
@@ -42,6 +51,9 @@ function BuildURL(country , city , time) {
 
     return url.toString();
 }
+
+
+
 
 function Render(responseData)
 {
@@ -90,6 +102,7 @@ return dateString;
 }
 
 
+
 async function SearchPrayerTime(country , city , time)
 {
     SetError("");
@@ -105,12 +118,14 @@ async function SearchPrayerTime(country , city , time)
                     throw new Error(`HTTP ${res.status} (${res.statusText})`);
                     } 
         const data = await res.json();
-        if (data.status === 'OK') {
+        if (data.status === 'OK'&& data.data && data.data.timings) {
             Render(data);
+            setResult(`Prayer times in ${country} | city : ${city}`, true);
         } 
         else
         {
              SetError(`no data was found for your input location`);
+             setResult("", false);
         }
          setLoading(false);
 
