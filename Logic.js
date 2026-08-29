@@ -5,7 +5,8 @@ const UI = {
     countrySelect: document.getElementById('country_select'),
     lbInvalid: document.getElementById('lbInvalid'),
     tbTimes: document.getElementById('tbTimes'),
-    LoadingSpiner : document.getElementById('LoadingSpin')
+    LoadingSpiner : document.getElementById('LoadingSpin'),
+    btnSearch : document.getElementById('btn_search')
 };
 
 const Main_URL = "https://api.aladhan.com/v1";
@@ -74,6 +75,17 @@ function Render(data)
     
 }
 
+function GetCurrentDate()
+{
+const today = new Date();
+const day = String(today.getDate()).padStart(2, '0');
+const month = String(today.getMonth() + 1).padStart(2, '0');
+const year = today.getFullYear();
+const dateString = `${day}-${month}-${year}`; // "27-08-2026"
+return dateString;
+}
+
+
 async function SearchPrayerTime(country , city , time)
 {
     SetError("");
@@ -107,3 +119,7 @@ async function SearchPrayerTime(country , city , time)
         throw new Error(e.message);
     }
 }
+
+btnSearch.addEventListener('click' , () => {
+    SearchPrayerTime(countrySelect.value , txtCity.value , GetCurrentDate());
+})
