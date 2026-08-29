@@ -100,7 +100,7 @@ async function SearchPrayerTime(country , city , time)
                     throw new Error(`HTTP ${res.status} (${res.statusText})`);
                     } 
         const data = await res.json();
-        if (data.status === 200) {
+        if (data.status === 'OK') {
             Render(data);
         } 
         else
