@@ -105,6 +105,7 @@ return dateString;
 
 async function SearchPrayerTime(country , city , time)
 {
+    setResult("", false);
     SetError("");
     setLoading(true);
     const BaseURL = BuildURL(country, city , time);
