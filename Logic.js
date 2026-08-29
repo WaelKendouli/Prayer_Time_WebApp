@@ -36,9 +36,9 @@ function BuildURL(country , city , time) {
             throw new Error("wrong type used in one of the parameters , all of them should be string");
     }
 
-let parms = new URL(`timingsByCity/${time}`, Main_URL);
-parms.set("city", city);
-parms.set("country",country);
+    const url = new URL(`${Main_URL}/timingsByCity/${time}`);
+    url.searchParams.set("city", city);
+    url.searchParams.set("country", country);
 
 return parms.toString();
 }
