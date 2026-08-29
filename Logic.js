@@ -43,11 +43,16 @@ function BuildURL(country , city , time) {
     return url.toString();
 }
 
-function Render(data)
+function Render(responseData)
 {
 
-    const Timing = data.timings;
+    const Timing = responseData.data.timings;
     UI.tbTimes.innerHTML = "";
+     if (!Timing) {
+        SetError("No timing data available");
+        return;
+    }
+    
     UI.tbTimes.innerHTML = `
     <tr>
         <td>Fajr</td>
@@ -105,7 +110,7 @@ async function SearchPrayerTime(country , city , time)
         } 
         else
         {
-             SetError(`something wrong happend while deserializing the data`);
+             SetError(`no data was found for your input location`);
         }
          setLoading(false);
 
