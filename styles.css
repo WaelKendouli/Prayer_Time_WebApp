@@ -5,7 +5,7 @@
 	--color-primary-light: #dff3ea;
 	--color-secondary: #d9a441;
 	--color-background: #093b29;
-	--color-surface: #d0d0d0;
+	--color-surface: #e9e6e6;
 	--color-text: #ffffff;
   --color-spinner: #1a856e;
 	--color-text-muted: #667085;
@@ -96,6 +96,9 @@ color : var(--color-text);
 background-color: var(--color-primary);
 border-radius: var(--radius-sm);
 padding: 1.8rem 0.3rem;
+}
+input {
+  font-size: 20px;
 }
 input::placeholder {
     color : var(--color-text);
@@ -252,16 +255,22 @@ button:hover {
   transform: scale(0.9);
   transition: transform 0.2s ease;
 }
-
+.wrap {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap : 1.2rem;
+}
 /* Make text slightly smaller and muted on mobile if needed */
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   .adhan-table th,
   .adhan-table td {
     padding: 12px 15px;
     font-size: 0.9rem;
   }
   .Dashboard{
-    margin-top: 50px;
+    margin-block: 50px;
   }
   button {
     width: 100%;
@@ -271,6 +280,12 @@ button:hover {
   .SearchWrapper {
     flex-wrap: wrap;
   }
+  .wrap {
+  
+  grid-template-columns: repeat(1,1fr);
+  gap : 1.2rem;
+}
+
 }
 
 .Loading {
@@ -291,5 +306,7 @@ button:hover {
   display: flex;
   margin: 10px;
   font-size: 1.6rem;
+  font-weight: 700;
   color: var(--color-success);
 }
+

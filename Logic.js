@@ -38,13 +38,17 @@ function BuildURL(country , city , time) {
 
     if(!country || !city || !time)
     {
+        SetError("Missing required inputs");
+        setLoading(false);
         throw new Error("Missing required parameters");
     }
     if(typeof country !== "string" || typeof city !== "string" || typeof time !== "string" )
     {
+        SetError("wrong inputs type try to not use numbers or special characters");
+        setLoading(false);
             throw new Error("wrong type used in one of the parameters , all of them should be string");
     }
-
+    SetError("");
     const url = new URL(`${Main_URL}/timingsByCity/${time}`);
     url.searchParams.set("city", city);
     url.searchParams.set("country", country);
