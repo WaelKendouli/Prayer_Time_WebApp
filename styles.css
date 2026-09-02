@@ -260,7 +260,7 @@ button:hover {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap : 1.2rem;
+  gap : 3.2rem;
 }
 /* Make text slightly smaller and muted on mobile if needed */
 @media (max-width: 1200px) {
